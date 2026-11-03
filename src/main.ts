@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule, ObserveInstrument } from './app.module.js';
 import { ValidationPipe } from '@nestjs/common';
+import { AppModule, ObserveInstrument } from './app.module.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -20,9 +20,9 @@ async function bootstrap() {
     })
 );
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen( process.env.PORT! );
 
-  console.log("Iniciado");
+  console.log("Iniciado " + process.env.PORT!);
   
 }
 bootstrap();
